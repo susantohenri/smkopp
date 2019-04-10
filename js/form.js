@@ -89,15 +89,15 @@ function formInit () {
       })
     } else $(this).select2()
   })
-  $('[data-date="datepicker"]').datepicker({format: 'yyyy-mm-dd', autoclose: true})
+  // $('[data-date="datepicker"]').datepicker({format: 'yyyy-mm-dd', autoclose: true})
   // $('[data-date="timepicker"]').timepicker({defaultTime: false, showMeridian: false})
-  // $('[data-date="datetimepicker"]').daterangepicker({
-  //   singleDatePicker: true,
-  //   timePicker: true,
-  //   timePicker24Hour: true,
-  //   locale: {format: 'YYYY-MM-DD HH:mm:ss'},
-  //   startDate: moment().format('YYYY-MM-DD HH:mm:ss')
-  // })
+  $('[data-date="datetimepicker"]').daterangepicker({
+    singleDatePicker: true,
+    timePicker: true,
+    timePicker24Hour: true,
+    locale: {format: 'YYYY-MM-DD HH:mm:ss'},
+    startDate: moment().format('YYYY-MM-DD HH:mm:ss')
+  })
   $('[data-number="true"]').keyup(function () {
     $(this).val(currency(getNumber($(this))))
   })

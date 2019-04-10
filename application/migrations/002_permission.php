@@ -18,7 +18,7 @@ class Migration_permission extends CI_Migration {
 
     $this->load->model(array('Users', 'Permissions'));
     $admin = $this->Users->findOne(array('username' => 'admin'));
-    foreach (array('User', 'Kapal') as $entity) {
+    foreach (array('User', 'Kapal', 'KapalMasuk', 'KapalKeluar') as $entity) {
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         $this->Permissions->create(array('user' => $admin['uuid'], 'entity' => $entity, 'action' => $action));
       }
