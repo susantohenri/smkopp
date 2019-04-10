@@ -16,6 +16,12 @@ class Migration_permission extends CI_Migration {
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8
     ");
 
+    $this->load->model(array('Users', 'Permissions'));
+    $admin = $this->Users->findOne(array('username' => 'admin'));
+    foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
+      $this->Permissions->create(array('user' => $admin['uuid'], 'entity' => 'User', 'action' => $action));
+    }
+
   }
 
   function down () {

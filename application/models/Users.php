@@ -8,7 +8,6 @@ class Users extends MY_Model {
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
       (object) array('mData' => 'username', 'sTitle' => 'username'),
-      (object) array('mData' => 'nama_jabatan', 'sTitle' => 'Jabatan'),
     );
     $this->form  = array ();
 
@@ -27,17 +26,6 @@ class Users extends MY_Model {
         'type' => 'password',
         'name' => 'confirm_password',
         'label'=> 'Ulangi Password'
-    );
-
-    $this->form[]= array(
-      'name' => 'jabatan',
-      'label'=> 'Jabatan',
-      'options' => array(),
-      'attributes' => array(
-        array('data-autocomplete' => 'true'),
-        array('data-model' => 'Jabatans'),
-        array('data-field' => 'nama')
-      ),
     );
   }
 
@@ -65,9 +53,7 @@ class Users extends MY_Model {
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
-      ->select("{$this->table}.username")
-      ->select("jabatan.nama as nama_jabatan", false)
-      ->join('jabatan', 'user.jabatan = jabatan.uuid', 'left');
+      ->select("{$this->table}.username");
     return parent::dt();
   }
 

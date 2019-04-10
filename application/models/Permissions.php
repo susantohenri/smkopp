@@ -75,7 +75,7 @@ class Permissions extends MY_Model {
 
   function getPermissions () {
     $permission = array();
-    foreach ($this->find(array('user' => $this->session->userdata('user'))) as $perm) $permission[] = "{$perm->action}_{$perm->entity}";
+    foreach ($this->find(array('user' => $this->session->userdata('uuid'))) as $perm) $permission[] = "{$perm->action}_{$perm->entity}";
     return $permission;
   }
 
