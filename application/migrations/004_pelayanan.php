@@ -8,6 +8,7 @@ class Migration_pelayanan extends CI_Migration {
     $this->db->query("
       CREATE TABLE `pelayanan` (
         `uuid` varchar(255) NOT NULL,
+        `user` varchar(255) NOT NULL,
         `kapal` varchar(255) NOT NULL,
         `masuk` DATETIME,
         `keluar` DATETIME,

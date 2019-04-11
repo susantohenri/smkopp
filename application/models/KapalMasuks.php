@@ -32,6 +32,11 @@ class KapalMasuks extends MY_Model {
     );
   }
 
+  function create ($record) {
+    $record['user'] = $this->session->userdata('uuid');
+    return parent::create ($record);
+  }
+
   function dt () {
     $this->datatables
       ->select("{$this->table}.uuid")
@@ -40,6 +45,7 @@ class KapalMasuks extends MY_Model {
       ->select("{$this->table}.masuk")
       ->join('kapal', 'pelayanan.kapal = kapal.uuid', 'left')
       ->where('keluar IS NULL', NULL, false)
+      ->where('user', $this->session->userdata('uuid'))
       ->or_where('keluar', '0000-00-00 00:00:00');
     return parent::dt();
   }
@@ -53,6 +59,7 @@ class KapalMasuks extends MY_Model {
       ->select("kapal.nama as text", false)
       ->limit(10)
       ->join('kapal', 'kapal.uuid = pelayanan.kapal', 'left')
+      ->where('pelayanan.user', $this->session->userdata('uuid'))
       ->like('kapal.nama', $term)
       ->get($this->table)
       ->result();

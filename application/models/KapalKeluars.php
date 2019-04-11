@@ -41,6 +41,7 @@ class KapalKeluars extends MY_Model {
       ->select("{$this->table}.masuk")
       ->select("{$this->table}.keluar")
       ->join('kapal', 'pelayanan.kapal = kapal.uuid', 'left')
+      ->where('user', $this->session->userdata('uuid'))
       ->where('keluar <>', '0000-00-00 00:00:00');
     return parent::dt();
   }
