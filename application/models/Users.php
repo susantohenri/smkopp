@@ -7,13 +7,20 @@ class Users extends MY_Model {
     $this->table = 'user';
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
-      (object) array('mData' => 'username', 'sTitle' => 'username'),
+      (object) array('mData' => 'username', 'sTitle' => 'Login', 'width' => '50%'),
+      (object) array('mData' => 'kode_satker', 'sTitle' => 'Kode Satuan Kerja', 'width' => '20%'),
+      (object) array('mData' => 'pelabuhan', 'sTitle' => 'Pelabuhan', 'width' => '30%'),
     );
     $this->form  = array ();
 
     $this->form[]= array(
     	'name' => 'username',
-    	'label'=> 'username'
+    	'label'=> 'Username'
+    );
+
+    $this->form[]= array(
+      'name' => 'kode_satker',
+      'label'=> 'Kode Satuan Kerja'
     );
 
     $this->form[]= array(
@@ -53,7 +60,9 @@ class Users extends MY_Model {
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
-      ->select("{$this->table}.username");
+      ->select("{$this->table}.username")
+      ->select("{$this->table}.kode_satker")
+      ->select("{$this->table}.pelabuhan");
     return parent::dt();
   }
 

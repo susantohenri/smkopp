@@ -5,7 +5,7 @@
         </li>
         <?php if (in_array('User', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('User/') ?>"><i class="fa fa-life-ring"></i>Login Pelabuhan</a>
+            <a href="<?= site_url('User/') ?>"><i class="fa fa-shield"></i>Login Pelabuhan</a>
         </li>
         <?php endif ?>
         <?php if (in_array('Kapal', $permitted_menus)) : ?>
