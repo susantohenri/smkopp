@@ -23,5 +23,28 @@
             <a href="<?= site_url('KapalKeluar/') ?>"><i class="fa fa-sign-out"></i>Kapal Keluar</a>
         </li>
         <?php endif ?>
+
+        <li>
+            <a href="<?= site_url('WaitingTime/') ?>"><i class="fa fa-hourglass-half"></i>Waiting Time</a>
+        </li>
+        <li>
+            <a href="<?= site_url('ApproachTime/') ?>"><i class="fa fa-podcast"></i>Approach Time</a>
+        </li>
+        <li>
+            <a href="<?= site_url('EffectiveTime/') ?>"><i class="fa fa-bolt"></i>Effective Time</a>
+        </li>
+        <li>
+            <a href="<?= site_url('WTR/') ?>"><i class="fa fa-clock-o"></i>Working Time Ratio</a>
+        </li>
+        <li>
+            <a href="<?= site_url('BOR/') ?>"><i class="fa fa-exchange"></i>B.O.R</a>
+        </li>
+        <li>
+            <a href="<?= site_url('SOR/') ?>"><i class="fa fa-bank"></i>S.O.R</a>
+        </li>
+        <li>
+            <a href="<?= site_url('YOR/') ?>"><i class="fa fa-cubes"></i>Y.O.R</a>
+        </li>
+
     </ul>
 </nav>
