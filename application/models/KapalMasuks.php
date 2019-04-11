@@ -8,7 +8,7 @@ class KapalMasuks extends MY_Model {
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
       (object) array('mData' => 'nama', 'sTitle' => 'Kapal'),
-      (object) array('mData' => 'masuk', 'sTitle' => 'Waktu'),
+      (object) array('mData' => 'masuk', 'sTitle' => 'Masuk'),
     );
     $this->form  = array ();
 
@@ -39,17 +39,23 @@ class KapalMasuks extends MY_Model {
       ->select("kapal.nama")
       ->select("{$this->table}.masuk")
       ->join('kapal', 'pelayanan.kapal = kapal.uuid', 'left')
-      ->where('masuk <>', '0000-00-00 00:00:00');
+      ->where('keluar IS NULL', NULL, false)
+      ->or_where('keluar', '0000-00-00 00:00:00');
     return parent::dt();
   }
 
   function select2 ($field, $term) {
+    $this->load->model('Pelayanans');
+    $kapalInside = $this->Pelayanans->getKapalInside();
+    if (!empty($kapalInside)) $this->db->where_in("kapal.uuid", $kapalInside);
     return $this->db
-      ->select("pelayanan.uuid as id", false)
+      ->select("$this->table.uuid as id", false)
       ->select("kapal.nama as text", false)
       ->limit(10)
       ->join('kapal', 'kapal.uuid = pelayanan.kapal', 'left')
-      ->like('kapal.nama', $term)->get($this->table)->result();
+      ->like('kapal.nama', $term)
+      ->get($this->table)
+      ->result();
   }
 
 }

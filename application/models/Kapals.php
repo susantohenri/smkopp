@@ -25,4 +25,15 @@ class Kapals extends MY_Model {
     return parent::dt();
   }
 
+  function dropdownKapalMasuk ($field, $term) {
+    $this->load->model('Pelayanans');
+    $kapalOutside = $this->Pelayanans->getKapalOutside();
+    if (!empty($kapalOutside)) $this->db->where_in("$this->table.uuid", $kapalOutside);
+    return $this->db
+      ->select("uuid as id", false)
+      ->select("$field as text", false)
+      ->limit(10)
+      ->like($field, $term)->get($this->table)->result();
+  }
+
 }
