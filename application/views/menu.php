@@ -5,7 +5,22 @@
         </li>
         <?php if (in_array('User', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('User/') ?>"><i class="fa fa-shield"></i>Login Pelabuhan</a>
+            <a href="<?= site_url('User/') ?>"><i class="fa fa-shield"></i>Registrasi Pelabuhan</a>
+        </li>
+        <?php endif ?>
+        <?php if (in_array('Dermaga', $permitted_menus)) : ?>
+        <li>
+            <a href="<?= site_url('Dermaga/') ?>"><i class="fa fa-anchor"></i>Registrasi Dermaga</a>
+        </li>
+        <?php endif ?>
+        <?php if (in_array('Gudang', $permitted_menus)) : ?>
+        <li>
+            <a href="<?= site_url('Gudang/') ?>"><i class="fa fa-bank"></i>Registrasi Gudang</a>
+        </li>
+        <?php endif ?>
+        <?php if (in_array('Lapangan', $permitted_menus)) : ?>
+        <li>
+            <a href="<?= site_url('Lapangan/') ?>"><i class="fa fa-cubes"></i>Registrasi Lapangan</a>
         </li>
         <?php endif ?>
         <?php if (in_array('Kapal', $permitted_menus)) : ?>
@@ -13,17 +28,10 @@
             <a href="<?= site_url('Kapal/') ?>"><i class="fa fa-ship"></i>Registrasi Kapal</a>
         </li>
         <?php endif ?>
-        <?php if (in_array('KapalMasuk', $permitted_menus)) : ?>
-        <li>
-            <a href="<?= site_url('KapalMasuk/') ?>"><i class="fa fa-sign-in"></i>Kapal Masuk</a>
-        </li>
-        <?php endif ?>
-        <?php if (in_array('KapalKeluar', $permitted_menus)) : ?>
-        <li>
-            <a href="<?= site_url('KapalKeluar/') ?>"><i class="fa fa-sign-out"></i>Kapal Keluar</a>
-        </li>
-        <?php endif ?>
 
+        <li>
+            <a href="<?= site_url('Pelayanan/') ?>"><i class="fa fa-address-book-o"></i>Pelayanan</a>
+        </li>
         <li>
             <a href="<?= site_url('WaitingTime/') ?>"><i class="fa fa-hourglass-half"></i>Waiting Time</a>
         </li>

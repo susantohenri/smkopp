@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_pelayanan extends CI_Migration {
+class Migration_laporanharianlapangan extends CI_Migration {
 
   function up () {
 
     $this->db->query("
-      CREATE TABLE `pelayanan` (
+      CREATE TABLE `laporan_harian_lapangan` (
         `uuid` varchar(255) NOT NULL,
-        `user` varchar(255) NOT NULL,
-        `kapal` varchar(255) NOT NULL,
-        `masuk` DATETIME,
-        `keluar` DATETIME,
+        `lapangan` varchar(255) NOT NULL,
+        `tanggal` DATE,
+        `masuk` INT(11),
+        `keluar` INT(11),
         `urutan` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
         PRIMARY KEY (`uuid`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8
@@ -20,7 +20,7 @@ class Migration_pelayanan extends CI_Migration {
   }
 
   function down () {
-    $this->db->query("DROP TABLE IF EXISTS `pelayanan`");
+    $this->db->query("DROP TABLE IF EXISTS `laporan_harian_lapangan`");
   }
 
 }

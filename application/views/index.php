@@ -46,7 +46,7 @@
                         <ul class="nav-profile">
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="name"> <?= $this->session->userdata('username') ?> </span>
+                                    <span class="name"> <?= $this->session->userdata('nama') ?> </span>
                                 </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 30px, 0px); top: 0px; left: 0px; will-change: transform; font-size: 12px">
                                     <a class="dropdown-item" href="<?= site_url("ChangePassword/read/{$this->session->userdata('uuid')}") ?>">

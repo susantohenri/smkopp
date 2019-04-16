@@ -8,6 +8,7 @@ class Kapals extends MY_Model {
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
       (object) array('mData' => 'nama', 'sTitle' => 'Nama Kapal'),
+      (object) array('mData' => 'loa', 'sTitle' => 'L.O.A'),
     );
     $this->form  = array ();
 
@@ -15,25 +16,21 @@ class Kapals extends MY_Model {
     	'name' => 'nama',
     	'label'=> 'Nama Kapal'
     );
+
+    $this->form[]= array(
+      'name' => 'loa',
+      'label'=> 'L.O.A (M)'
+    );
+
   }
 
   function dt () {
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
-      ->select("{$this->table}.nama");
+      ->select("{$this->table}.nama")
+      ->select("CONCAT({$this->table}.loa, ' M') loa");
     return parent::dt();
-  }
-
-  function dropdownKapalMasuk ($field, $term) {
-    $this->load->model('Pelayanans');
-    $kapalOutside = $this->Pelayanans->getKapalOutside();
-    if (!empty($kapalOutside)) $this->db->where_in("$this->table.uuid", $kapalOutside);
-    return $this->db
-      ->select("uuid as id", false)
-      ->select("$field as text", false)
-      ->limit(10)
-      ->like($field, $term)->get($this->table)->result();
   }
 
 }

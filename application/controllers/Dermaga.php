@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class KapalKeluar extends MY_Controller {
+class Dermaga extends MY_Controller {
 
 }

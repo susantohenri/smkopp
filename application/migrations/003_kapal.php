@@ -9,6 +9,7 @@ class Migration_kapal extends CI_Migration {
       CREATE TABLE `kapal` (
         `uuid` varchar(255) NOT NULL,
         `nama` varchar(255) NOT NULL,
+        `loa` INT(11),
         `urutan` INT(11) UNIQUE NOT NULL AUTO_INCREMENT,
         PRIMARY KEY (`uuid`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8
