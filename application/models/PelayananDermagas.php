@@ -42,7 +42,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'masuk',
       'label'=> 'Masuk',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     );
 
@@ -50,7 +51,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'bergerak_kedalam',
       'label'=> 'Bergerak Kedalam',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     );
 
@@ -58,7 +60,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'tambat',
       'label'=> 'Tambat Tali',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     );
 
@@ -66,7 +69,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'mulai',
       'label'=> 'Memulai Pekerjaan',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     );
 
@@ -84,7 +88,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'selesai',
       'label'=> 'Pekerjaan Selesai',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     );
 
@@ -92,7 +97,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'bergerak_keluar',
       'label'=> 'Bergerak Keluar',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     ); 
 
@@ -100,7 +106,8 @@ class PelayananDermagas extends MY_Model {
       'name' => 'keluar',
       'label'=> 'Keluar',
       'attributes' => array (
-        array ('data-date' => 'datetimepicker')
+        array ('data-date' => 'datetimepicker'),
+        array ('autocomplete' => 'off')
       )
     ); 
 

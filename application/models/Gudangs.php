@@ -47,4 +47,10 @@ class Gudangs extends MY_Model {
     return parent::create ($record);
   }
 
+  function select2 ($field, $term) {
+    if ('admin' !== $this->session->userdata('username'))
+      $this->db->where('user', $this->session->userdata('uuid'));
+    return parent::select2 ($field, $term);
+  }
+
 }

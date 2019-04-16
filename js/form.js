@@ -89,7 +89,7 @@ function formInit () {
       })
     } else $(this).select2()
   })
-  // $('[data-date="datepicker"]').datepicker({format: 'yyyy-mm-dd', autoclose: true})
+  $('[data-date="datepicker"]').datepicker({format: 'yyyy-mm-dd', autoclose: true})
   // $('[data-date="timepicker"]').timepicker({defaultTime: false, showMeridian: false})
   $('[data-date="datetimepicker"]').daterangepicker({
     singleDatePicker: true,

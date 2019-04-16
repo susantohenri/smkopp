@@ -31,19 +31,19 @@
 
         <?php if (in_array('PelayananDermaga', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('PelayananDermaga/') ?>"><i class="fa fa-address-book-o"></i>Pelayanan Dermaga</a>
+            <a href="<?= site_url('PelayananDermaga/') ?>"><i class="fa fa-server"></i>Pelayanan Dermaga</a>
         </li>
         <?php endif ?>
 
         <?php if (in_array('LaporanHarianGudang', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('LaporanHarianGudang/') ?>"><i class="fa fa-address-book-o"></i>Laporan Harian Gudang</a>
+            <a href="<?= site_url('LaporanHarianGudang/') ?>"><i class="fa fa-database"></i>Laporan Harian Gudang</a>
         </li>
         <?php endif ?>
 
         <?php if (in_array('LaporanHarianLapangan', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('LaporanHarianLapangan/') ?>"><i class="fa fa-address-book-o"></i>Laporan Harian Lapangan</a>
+            <a href="<?= site_url('LaporanHarianLapangan/') ?>"><i class="fa fa-cube"></i>Laporan Harian Lapangan</a>
         </li>
         <?php endif ?>
 
