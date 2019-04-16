@@ -49,7 +49,7 @@ class Migration_seeds extends CI_Migration {
         ));
       }
 
-      foreach (array('Kapal', 'Dermaga', 'Gudang', 'Lapangan') as $entity) {
+      foreach (array('Kapal', 'Dermaga', 'Gudang', 'Lapangan', 'PelayananDermaga') as $entity) {
         foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
           $this->Permissions->create(array('user' => $user, 'entity' => $entity, 'action' => $action));
         }
@@ -58,7 +58,7 @@ class Migration_seeds extends CI_Migration {
     }
 
     $admin = $this->Users->findOne(array('username' => 'admin'));
-    foreach (array('User', 'Kapal', 'Dermaga', 'Gudang', 'Lapangan') as $entity) {
+    foreach (array('User', 'Kapal', 'Dermaga', 'Gudang', 'Lapangan', 'PelayananDermaga') as $entity) {
       foreach (array('index', 'create', 'read', 'update', 'delete') as $action) {
         $this->Permissions->create(array('user' => $admin['uuid'], 'entity' => $entity, 'action' => $action));
       }

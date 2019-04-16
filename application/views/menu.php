@@ -29,9 +29,12 @@
         </li>
         <?php endif ?>
 
+        <?php if (in_array('Kapal', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('Pelayanan/') ?>"><i class="fa fa-address-book-o"></i>Pelayanan</a>
+            <a href="<?= site_url('PelayananDermaga/') ?>"><i class="fa fa-address-book-o"></i>Pelayanan Dermaga</a>
         </li>
+        <?php endif ?>
+
         <li>
             <a href="<?= site_url('WaitingTime/') ?>"><i class="fa fa-hourglass-half"></i>Waiting Time</a>
         </li>

@@ -95,8 +95,8 @@ function formInit () {
     singleDatePicker: true,
     timePicker: true,
     timePicker24Hour: true,
-    locale: {format: 'YYYY-MM-DD HH:mm:ss'},
-    startDate: moment().format('YYYY-MM-DD HH:mm:ss')
+    locale: {format: 'YYYY-MM-DD HH:mm'},
+    // startDate: moment().format('YYYY-MM-DD HH:mm')
   })
   $('[data-number="true"]').keyup(function () {
     $(this).val(currency(getNumber($(this))))
