@@ -47,27 +47,47 @@
         </li>
         <?php endif ?>
 
+        <?php if (in_array('WaitingTime', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('WaitingTime/') ?>"><i class="fa fa-hourglass-half"></i>Waiting Time</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('ApproachTime', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('ApproachTime/') ?>"><i class="fa fa-podcast"></i>Approach Time</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('EffectiveTime', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('EffectiveTime/') ?>"><i class="fa fa-bolt"></i>Effective Time</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('WTR', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('WTR/') ?>"><i class="fa fa-clock-o"></i>Working Time Ratio</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('BOR', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('BOR/') ?>"><i class="fa fa-exchange"></i>B.O.R</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('SOR', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('SOR/') ?>"><i class="fa fa-bank"></i>S.O.R</a>
         </li>
+        <?php endif ?>
+
+        <?php if (in_array('YOR', $permitted_menus)) : ?>
         <li>
             <a href="<?= site_url('YOR/') ?>"><i class="fa fa-cubes"></i>Y.O.R</a>
         </li>
+        <?php endif ?>
 
     </ul>
 </nav>
