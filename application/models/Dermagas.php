@@ -19,8 +19,9 @@ class Dermagas extends MY_Model {
   }
 
   function dt () {
-    if ('admin' !== $this->session->userdata('username'))
+    if ('admin' !== $this->session->userdata('username')) {
       $this->datatables->where('user', $this->session->userdata('uuid'));
+    }
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
@@ -34,8 +35,9 @@ class Dermagas extends MY_Model {
   }
 
   function select2 ($field, $term) {
-    if ('admin' !== $this->session->userdata('username'))
+    if ('admin' !== $this->session->userdata('username')) {
       $this->db->where('user', $this->session->userdata('uuid'));
+    }
     return parent::select2 ($field, $term);
   }
 

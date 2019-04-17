@@ -16,8 +16,9 @@ class WaitingTimes extends MY_Model {
   }
 
   function dt () {
-    if ('admin' !== $this->session->userdata('username'))
+    if ('admin' !== $this->session->userdata('username')) {
       $this->datatables->where('dermaga.user', $this->session->userdata('uuid'));
+    }
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
@@ -28,7 +29,27 @@ class WaitingTimes extends MY_Model {
       ->join('kapal', "{$this->table}.kapal = kapal.uuid", 'left')
       ->join('dermaga', "{$this->table}.dermaga = dermaga.uuid", 'left')
       ;
-    return parent::dt();
+    $data = parent::dt();
+    $data = json_decode($data);
+
+    $footer = array();
+    foreach ($this->thead as $th) $footer[] = '';
+    if ('admin' !== $this->session->userdata('username')) {
+      $this->db->where('dermaga.user', $this->session->userdata('uuid'));
+    }
+    $avg = $this->db
+      ->select("CONCAT(ROUND(AVG(ROUND(TIME_TO_SEC(TIMEDIFF(bergerak_kedalam, masuk))/3600, 1)), 1), ' JAM') rata_rata", false)
+      ->join('kapal', "{$this->table}.kapal = kapal.uuid", 'left')
+      ->join('dermaga', "{$this->table}.dermaga = dermaga.uuid", 'left')
+      ->get($this->table)
+      ->row_array();
+    $footer[count($footer) - 2] = 'Rata - rata';
+    $footer[count($footer) - 1] = $avg['rata_rata'];
+    $data->footer = $footer;
+
+
+    $data = json_encode($data);
+    return $data;
   }
 
 }

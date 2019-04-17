@@ -19,6 +19,10 @@
     <section class="section">
         <div class="card card-block">
             <table class="table table-bordered table-striped datatable table-model">
+                <tfoot>
+                    <tr>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </section>

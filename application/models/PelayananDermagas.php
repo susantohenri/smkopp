@@ -114,8 +114,9 @@ class PelayananDermagas extends MY_Model {
   }
 
   function dt () {
-    if ('admin' !== $this->session->userdata('username'))
+    if ('admin' !== $this->session->userdata('username')) {
       $this->datatables->where('user', $this->session->userdata('uuid'));
+    }
     $this->datatables
       ->select("{$this->table}.uuid")
       ->select("{$this->table}.urutan")
