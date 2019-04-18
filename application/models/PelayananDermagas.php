@@ -133,7 +133,7 @@ class PelayananDermagas extends MY_Model {
   function findOne ($param) {
     $this->db->select("{$this->table}.*");
     foreach (array('masuk', 'bergerak_kedalam', 'tambat', 'mulai', 'selesai', 'bergerak_keluar', 'keluar') as $min) {
-      $this->db->select("DATE_FORMAT({$this->table}.{$min}, '%Y-%m-%d %h:%i') {$min}", false);
+      $this->db->select("DATE_FORMAT({$this->table}.{$min}, '%Y-%m-%d %H:%i') {$min}", false);
     }
     return parent::findOne($param);
   }

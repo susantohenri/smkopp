@@ -67,13 +67,13 @@
 
         <?php if (in_array('WTR', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('WTR/') ?>"><i class="fa fa-clock-o"></i>Working Time Ratio</a>
+            <a href="<?= site_url('WTR/') ?>"><i class="fa fa-cogs"></i>W.T.R</a>
         </li>
         <?php endif ?>
 
         <?php if (in_array('BOR', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('BOR/') ?>"><i class="fa fa-exchange"></i>B.O.R</a>
+            <a href="<?= site_url('BOR/') ?>"><i class="fa fa-recycle"></i>B.O.R</a>
         </li>
         <?php endif ?>
 
