@@ -7,7 +7,7 @@ class EffectiveTimes extends MY_Model {
     $this->table = 'pelayanan_dermaga';
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
-      (object) array('mData' => 'nama_kapal', 'sTitle' => 'Nama Kapal', 'searchable' => false),
+      (object) array('mData' => 'nama_kapal', 'sTitle' => 'Nama Kapal'),
 
       (object) array('mData' => 'mulai', 'sTitle' => 'Mulai', 'className' => 'text-right'),
       (object) array('mData' => 'selesai', 'sTitle' => 'Selesai', 'className' => 'text-right'),
