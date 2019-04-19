@@ -7,7 +7,7 @@ class BORs extends MY_Model {
     $this->table = 'pelayanan_dermaga';
     $this->thead = array(
       (object) array('mData' => 'urutan', 'sTitle' => 'No', 'visible' => false),
-      (object) array('mData' => 'periode', 'sTitle' => 'Periode', 'searchable' => false),
+      (object) array('mData' => 'periode', 'sTitle' => 'Periode'),
       (object) array('mData' => 'bt_total', 'sTitle' => 'Total Berthing Time', 'className' => 'text-right'),
       (object) array('mData' => 'total_time', 'sTitle' => 'Waktu Tersedia', 'className' => 'text-right'),
       (object) array('mData' => 'bor', 'sTitle' => 'B.O.R', 'className' => 'text-right'),
