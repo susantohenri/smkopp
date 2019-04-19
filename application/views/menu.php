@@ -37,13 +37,13 @@
 
         <?php if (in_array('LaporanHarianGudang', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('LaporanHarianGudang/') ?>"><i class="fa fa-database"></i>Laporan Harian Gudang</a>
+            <a href="<?= site_url('LaporanHarianGudang/') ?>"><i class="fa fa-list"></i>Laporan Harian Gudang</a>
         </li>
         <?php endif ?>
 
         <?php if (in_array('LaporanHarianLapangan', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('LaporanHarianLapangan/') ?>"><i class="fa fa-cube"></i>Laporan Harian Lapangan</a>
+            <a href="<?= site_url('LaporanHarianLapangan/') ?>"><i class="fa fa-list-ul"></i>Laporan Harian Lapangan</a>
         </li>
         <?php endif ?>
 
@@ -79,13 +79,13 @@
 
         <?php if (in_array('SOR', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('SOR/') ?>"><i class="fa fa-bank"></i>S.O.R</a>
+            <a href="<?= site_url('SOR/') ?>"><i class="fa fa-refresh"></i>S.O.R</a>
         </li>
         <?php endif ?>
 
         <?php if (in_array('YOR', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('YOR/') ?>"><i class="fa fa-cubes"></i>Y.O.R</a>
+            <a href="<?= site_url('YOR/') ?>"><i class="fa fa-retweet"></i>Y.O.R</a>
         </li>
         <?php endif ?>
 
