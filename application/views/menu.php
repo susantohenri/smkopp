@@ -89,5 +89,11 @@
         </li>
         <?php endif ?>
 
+        <?php if (in_array('Config', $permitted_menus)) : ?>
+        <li>
+            <a href="<?= site_url('Config/') ?>"><i class="fa fa-wrench"></i>Configuration</a>
+        </li>
+        <?php endif ?>
+
     </ul>
 </nav>
