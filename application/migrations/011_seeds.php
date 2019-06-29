@@ -64,8 +64,10 @@ class Migration_seeds extends CI_Migration {
       }
     }
 
+    $everyone = $this->Users->find();
+    foreach ($everyone as $alluser) $this->Permissions->create(array('user' => $alluser->uuid, 'entity' => 'ChangePassword', 'action' => 'update'));
     foreach (array('WaitingTime', 'ApproachTime', 'EffectiveTime', 'WTR', 'BOR', 'SOR', 'YOR') as $report)
-      foreach ($this->Users->find() as $alluser)
+      foreach ($everyone as $alluser)
         $this->Permissions->create(array('user' => $alluser->uuid, 'entity' => $report, 'action' => 'index'));
 
   }
