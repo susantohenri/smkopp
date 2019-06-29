@@ -326,9 +326,6 @@
         <?php elseif (in_array($page_name, array('list','breakdown-list'))): ?>
             <script type="text/javascript" src="<?= base_url('js/list.js') ?>"></script>
             <script type="text/javascript" src="<?= base_url('js/bootbox.min.js') ?>"></script>
-        <?php elseif ('dashboard' === $page_name): ?>
-            <script type="text/javascript" src="<?= base_url('js/gauge.min.js') ?>"></script>
-            <script type="text/javascript" src="<?= base_url('js/dashboard.js') ?>"></script>
         <?php endif ?>
     </body>
 </html>

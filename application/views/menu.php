@@ -91,7 +91,7 @@
 
         <?php if (in_array('Config', $permitted_menus)) : ?>
         <li>
-            <a href="<?= site_url('Config/') ?>"><i class="fa fa-wrench"></i>Configuration</a>
+            <a href="<?= site_url('Config/') ?>"><i class="fa fa-dashboard"></i>Standar</a>
         </li>
         <?php endif ?>
 
