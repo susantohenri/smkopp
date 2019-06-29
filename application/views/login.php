@@ -19,7 +19,7 @@
                         <h1 class="auth-title" style="color: #ff9800">
                             <img src="<?= base_url('images/logo.png') ?>">
                             <br>
-                            Sistem Monitoring Kinerja Operasional Pelayanan Pelabuhan
+                            Sistem Monitoring Kinerja Pelayanan Operasional Pelabuhan
                             <br><small style="font-size: 14px">
                             Direktorat Jenderal Perhubungan Laut
                             </small>
